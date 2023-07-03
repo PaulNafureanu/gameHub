@@ -36,7 +36,11 @@ function App() {
     <Container fluid>
       <Row className="mb-5">
         <Col>
-          <NavBar darkMode={darkMode} onDarkModeToggle={handleDarkModeToggle} />
+          <NavBar
+            darkMode={darkMode}
+            onDarkModeToggle={handleDarkModeToggle}
+            onSubmit={(value) => handleGameQueryChange("search", value)}
+          />
         </Col>
       </Row>
       <Row>

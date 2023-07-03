@@ -14,6 +14,8 @@ const GameGrid = ({ gameQuery }: Props) => {
 
   if (error) return <div>{error}</div>;
 
+  if (!games) return <div>No games were found!</div>;
+
   if (isLoading)
     return (
       <Container fluid>

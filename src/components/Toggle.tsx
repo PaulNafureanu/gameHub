@@ -18,7 +18,11 @@ const Toggle = ({ value, onTrue, onFalse, onClick, label }: Props) => {
       value=""
       onClick={onClick}
     >
-      <Stack direction="horizontal" gap={1} className="align-items-center">
+      <Stack
+        direction="horizontal"
+        gap={1}
+        className="align-items-center text-nowrap ms-1"
+      >
         {value ? onTrue : onFalse}
         {label}
       </Stack>
