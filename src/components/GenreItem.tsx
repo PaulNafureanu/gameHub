@@ -1,6 +1,7 @@
 import React from "react";
 import { Genre } from "../hooks/useGenres";
 import { Button, Image, Stack } from "react-bootstrap";
+import getCropImageUrl from "../utility/getCropImageUrl";
 
 interface Props {
   children: Genre;
@@ -15,7 +16,7 @@ const GenreItem = ({ children, onClick, isFwBold = false }: Props) => {
   return (
     <Stack direction="horizontal">
       <Image
-        src={children.image_background}
+        src={getCropImageUrl(children.image_background)}
         style={{ objectFit: "cover", height: size, width: size }}
         className="rounded-3"
       />

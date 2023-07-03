@@ -2,6 +2,7 @@ import { Card, Stack } from "react-bootstrap";
 import { Game } from "../hooks/useGames";
 import PlatformIconList from "./PlatformIconList";
 import GameMetacritic from "./GameMetacritic";
+import getCropImageUrl from "../utility/getCropImageUrl";
 
 interface Props {
   children: Game;
@@ -14,7 +15,7 @@ const GameCard = ({ children }: Props) => {
     <Card style={{ height: "22rem" }}>
       <Card.Img
         style={{ height: "16rem", objectFit: "cover" }}
-        src={children.background_image}
+        src={getCropImageUrl(children.background_image)}
       />
       <Card.Body>
         <Card.Title>{children.name}</Card.Title>
