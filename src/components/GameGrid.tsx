@@ -2,9 +2,14 @@ import { Col, Container, Row } from "react-bootstrap";
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
+import { GameQuery } from "../App";
 
-const GameGrid = () => {
-  const { data: games, error, isLoading } = useGames();
+interface Props {
+  gameQuery: GameQuery;
+}
+
+const GameGrid = ({ gameQuery }: Props) => {
+  const { data: games, error, isLoading } = useGames(gameQuery);
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   if (error) return <div>{error}</div>;
@@ -24,7 +29,7 @@ const GameGrid = () => {
 
   return (
     <Container fluid>
-      <Row className="justify-content-around">
+      <Row className="justify-content-between">
         {games.map((game) => (
           <Col key={game.id} md={6} lg={4} xxl={3} className="mb-4">
             <GameCard>{game}</GameCard>

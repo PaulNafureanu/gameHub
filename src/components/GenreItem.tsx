@@ -2,10 +2,11 @@ import React from "react";
 import { Genre } from "../hooks/useGenres";
 import { Button, Image, Stack } from "react-bootstrap";
 import getCropImageUrl from "../utility/getCropImageUrl";
+import noImage from "./../assets/placeholder.webp";
 
 interface Props {
   children: Genre;
-  onClick?: () => void;
+  onClick: () => void;
   isFwBold?: boolean;
 }
 
@@ -16,7 +17,11 @@ const GenreItem = ({ children, onClick, isFwBold = false }: Props) => {
   return (
     <Stack direction="horizontal">
       <Image
-        src={getCropImageUrl(children.image_background)}
+        src={
+          children.image_background
+            ? getCropImageUrl(children.image_background)
+            : noImage
+        }
         style={{ objectFit: "cover", height: size, width: size }}
         className="rounded-3"
       />

@@ -3,6 +3,7 @@ import { Game } from "../hooks/useGames";
 import PlatformIconList from "./PlatformIconList";
 import GameMetacritic from "./GameMetacritic";
 import getCropImageUrl from "../utility/getCropImageUrl";
+import noImage from "./../assets/placeholder.webp";
 
 interface Props {
   children: Game;
@@ -15,7 +16,11 @@ const GameCard = ({ children }: Props) => {
     <Card style={{ height: "22rem" }}>
       <Card.Img
         style={{ height: "16rem", objectFit: "cover" }}
-        src={getCropImageUrl(children.background_image)}
+        src={
+          children.background_image
+            ? getCropImageUrl(children.background_image)
+            : noImage
+        }
       />
       <Card.Body>
         <Card.Title>{children.name}</Card.Title>

@@ -11,7 +11,7 @@ const GameMetacritic = ({ metacritic }: Props) => {
 
   return (
     <Badge pill bg={color} className="px-3">
-      {metacritic}
+      {metacritic ? metacritic : "-"}
     </Badge>
   );
 };
