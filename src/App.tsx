@@ -2,6 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import NavBar from "./components/NavBar";
 import useDarkMode from "./hooks/useDarkMode";
 import GameGrid from "./components/GameGrid";
+import GenreList from "./components/GenreList";
 
 function App() {
   const { darkMode, setDarkMode } = useDarkMode(true);
@@ -19,7 +20,7 @@ function App() {
       </Row>
       <Row>
         <Col md={2} className="d-none d-md-block">
-          Aside
+          <GenreList />
         </Col>
         <Col md={10}>
           <GameGrid />

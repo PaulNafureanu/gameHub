@@ -8,7 +8,10 @@ interface Props {
 const GameCard = ({ children }: Props) => {
   return (
     <Card style={{ height: "22rem" }}>
-      <Card.Img src={children.background_image} />
+      <Card.Img
+        style={{ height: "16rem", objectFit: "cover" }}
+        src={children.background_image}
+      />
       <Card.Body>
         <Card.Title>{children.name}</Card.Title>
         <Card.Text>Text</Card.Text>
