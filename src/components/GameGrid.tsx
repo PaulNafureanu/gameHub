@@ -14,7 +14,7 @@ const GameGrid = () => {
       <Container fluid>
         <Row>
           {skeletons.map((skeleton) => (
-            <Col key={skeleton} md={4} className="mb-4">
+            <Col key={skeleton} md={6} lg={4} xxl={3} className="mb-4">
               <GameCardSkeleton />
             </Col>
           ))}
@@ -24,9 +24,9 @@ const GameGrid = () => {
 
   return (
     <Container fluid>
-      <Row>
+      <Row className="justify-content-around">
         {games.map((game) => (
-          <Col key={game.id} md={4} className="mb-4">
+          <Col key={game.id} md={6} lg={4} xxl={3} className="mb-4">
             <GameCard>{game}</GameCard>
           </Col>
         ))}

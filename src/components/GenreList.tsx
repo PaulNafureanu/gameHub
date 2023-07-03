@@ -9,10 +9,10 @@ const GenreList = () => {
 
   if (error) return null;
 
-  if (isLoading) return <div>"Loading..."</div>;
+  if (isLoading) return <div>Loading...</div>;
 
   return (
-    <Stack gap={2} className="m-2">
+    <Stack gap={2} className="m-2 mt-0">
       {data.map((genre) => (
         <GenreItem
           onClick={() => setSelectedGenre(genre)}

@@ -13,16 +13,16 @@ function App() {
 
   return (
     <Container fluid>
-      <Row>
+      <Row className="mb-5">
         <Col>
           <NavBar darkMode={darkMode} onDarkModeToggle={handleDarkModeToggle} />
         </Col>
       </Row>
       <Row>
-        <Col md={2} className="d-none d-md-block">
+        <Col md={3} lg={2} className="d-none d-md-block">
           <GenreList />
         </Col>
-        <Col md={10}>
+        <Col md={9} lg={10}>
           <GameGrid />
         </Col>
       </Row>
