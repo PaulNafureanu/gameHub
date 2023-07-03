@@ -1,7 +1,7 @@
-import { Stack, Image } from "react-bootstrap";
+import { Stack } from "react-bootstrap";
 import { BsFillSunFill, BsFillMoonStarsFill } from "react-icons/bs";
 import Toggle from "./Toggle";
-import logo from "./../assets/logo.webp";
+import Logo from "./Logo";
 
 interface Props {
   darkMode: boolean;
@@ -11,7 +11,7 @@ interface Props {
 const NavBar = ({ darkMode, onDarkModeToggle }: Props) => {
   return (
     <Stack direction="horizontal" className="justify-content-between">
-      <Image src={logo} height="48px" />
+      <Logo />
       <Toggle
         value={darkMode}
         onTrue={<BsFillSunFill color="yellow" size="20px" />}
