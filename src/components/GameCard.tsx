@@ -10,6 +10,7 @@ interface Props {
 }
 
 const GameCard = ({ children }: Props) => {
+  if (!children.platforms) children.platforms = [];
   const platforms = children.platforms.map((p) => p.platform);
 
   return (

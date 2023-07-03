@@ -15,6 +15,9 @@ const SearchField = ({ onSubmit }: Props) => {
         event.preventDefault();
         if (ref.current?.value) onSubmit(ref.current.value);
       }}
+      onChange={() => {
+        if (ref.current?.value === "") onSubmit(ref.current.value);
+      }}
     >
       <Form.Control ref={ref} type="text" placeholder="Search here..." />
     </Form>

@@ -1,30 +1,63 @@
 import { Dropdown } from "react-bootstrap";
 
 interface Props {
-  onClick: (platform: string) => void;
+  selectedPlatform: string;
+  onClick: (platform: { id: string; name: string }) => void;
 }
 
-const PlatformSelector = ({ onClick }: Props) => {
+const PlatformSelector = ({ selectedPlatform, onClick }: Props) => {
   const platforms = [
-    "all",
-    "android",
-    "ios",
-    "pc",
-    "mac",
-    "linux",
-    "playstation",
-    "xbox",
-    "nintendo",
-    "web",
+    {
+      id: "",
+      name: "All",
+    },
+    {
+      id: "21",
+      name: "Android",
+    },
+    {
+      id: "3",
+      name: "iOS",
+    },
+    {
+      id: "4",
+      name: "PC",
+    },
+    {
+      id: "5",
+      name: "Mac",
+    },
+    {
+      id: "6",
+      name: "Linux",
+    },
+    {
+      id: "16,18,19,187",
+      name: "Playstation",
+    },
+    {
+      id: "1,14,80,186",
+      name: "Xbox",
+    },
+    {
+      id: "7",
+      name: "Nintendo",
+    },
+    {
+      id: "171",
+      name: "Web",
+    },
   ];
 
   return (
     <Dropdown>
-      <Dropdown.Toggle variant="secondary">Platforms</Dropdown.Toggle>
+      <Dropdown.Toggle variant="secondary">
+        {selectedPlatform === "All" ? "Platform" : selectedPlatform}
+      </Dropdown.Toggle>
       <Dropdown.Menu>
         {platforms.map((platform) => (
-          <Dropdown.Item key={platform} onClick={() => onClick(platform)}>
-            {platform.charAt(0).toUpperCase() + platform.slice(1)}
+          <Dropdown.Item key={platform.id} onClick={() => onClick(platform)}>
+            {platform.name}
           </Dropdown.Item>
         ))}
       </Dropdown.Menu>

@@ -4,11 +4,11 @@ import { Stack } from "react-bootstrap";
 import GenreItem from "./GenreItem";
 
 interface Props {
-  selectedGenreId: string | undefined;
-  onClick: (selectedGenreId: string) => void;
+  selectedGenre: Genre | undefined;
+  onClick: (selectedGenre: Genre) => void;
 }
 
-const GenreList = ({ selectedGenreId, onClick }: Props) => {
+const GenreList = ({ selectedGenre, onClick }: Props) => {
   const { data, error, isLoading } = useGenres();
 
   if (error) return null;
@@ -19,11 +19,9 @@ const GenreList = ({ selectedGenreId, onClick }: Props) => {
     <Stack gap={2} className="m-2 mt-0">
       {data.map((genre) => (
         <GenreItem
-          onClick={() => onClick(genre.id.toString())}
+          onClick={() => onClick(genre)}
           key={genre.id}
-          isFwBold={
-            genre.id === parseInt(selectedGenreId ? selectedGenreId : "")
-          }
+          isFwBold={genre.id === selectedGenre?.id}
         >
           {genre}
         </GenreItem>
