@@ -18,8 +18,10 @@ function App() {
         </Col>
       </Row>
       <Row>
-        <Col className="d-none d-md-block">Aside</Col>
-        <Col>
+        <Col md={2} className="d-none d-md-block">
+          Aside
+        </Col>
+        <Col md={10}>
           <GameGrid />
         </Col>
       </Row>
