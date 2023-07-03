@@ -1,6 +1,7 @@
-import { Card } from "react-bootstrap";
+import { Card, Stack } from "react-bootstrap";
 import { Game } from "../hooks/useGames";
 import PlatformIconList from "./PlatformIconList";
+import GameMetacritic from "./GameMetacritic";
 
 interface Props {
   children: Game;
@@ -17,7 +18,10 @@ const GameCard = ({ children }: Props) => {
       />
       <Card.Body>
         <Card.Title>{children.name}</Card.Title>
-        <PlatformIconList platforms={platforms} />
+        <Stack direction="horizontal" className="justify-content-between">
+          <PlatformIconList platforms={platforms} />
+          <GameMetacritic metacritic={children.metacritic} />
+        </Stack>
       </Card.Body>
     </Card>
   );

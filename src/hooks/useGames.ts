@@ -11,6 +11,8 @@ export interface Game {
   name: string;
   background_image: string;
   platforms: { platform: Platform }[];
+  rating: number;
+  metacritic: number;
 }
 
 const useGames = () => useData<Game[]>("/games");
